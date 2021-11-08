@@ -57,11 +57,30 @@ var displayRepos = function(repos, searchTerm) {
         // append to container
         repoEl.appendChild(titleEl);
 
+        // create a status element
+        var statusEl = document.createElement("span");
+        statusEl.classList = "flex-row align-center";
+
+        // check if current repo has an issue or not
+        if (repos[i].open_issues_count > 0) {
+            statusEl.innerHTML = 
+                "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + " issue(s)";
+        }
+        else {
+            statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
+        }
+
+        // append to container
+        repoEl.appendChild(statusEl);
+
         // append container to the dom
         repoContainerEl.appendChild(repoEl);
     }
-
 };
 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
+
+// chapter 6.2.5
+// https://courses.bootcampspot.com/courses/895/pages/6-dot-2-5-display-response-data-on-page?module_item_id=309933
+// Display Repo Issues on the Page
