@@ -96,7 +96,3 @@ var displayRepos = function(repos, searchTerm) {
 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
-
-// chapter 6.2.5
-// https://courses.bootcampspot.com/courses/895/pages/6-dot-2-5-display-response-data-on-page?module_item_id=309933
-// Display Repo Issues on the Page
